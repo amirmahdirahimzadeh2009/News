@@ -1,0 +1,117 @@
+@font-face {
+  font-family: italic;
+  src: url(../fonts/ComicNeue-Italic.ttf);
+}
+@font-face {
+  font-family: bold-italic;
+  src: url(../fonts/ComicNeue-BoldItalic.ttf);
+}
+@font-face {
+  font-family: light-italic;
+  src: url(../fonts/ComicNeue-LightItalic.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-image: linear-gradient(to right, #1e3c72, #2a5298);
+  padding: 20px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+h1 {
+  color: white;
+  font-family: bold-italic;
+  font-size: 64px;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.loader-container {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  background: transparent
+    url("https://media.giphy.com/media/8agqybiK5LW8qrG3vJ/giphy.gif") center
+    no-repeat;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.spinner {
+  width: 64px;
+  height: 64px;
+  border: 8px solid;
+  border-color: #3d5af1 transparent #3d5af1 transparent;
+  border-radius: 50%;
+  animation: spin-anim 1.2s linear infinite;
+}
+
+@keyframes spin-anim {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.card {
+  width: 300px;
+  height: 500px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  overflow-y: scroll;
+}
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transition-delay: 0.3s;
+  transition-duration: 0.5s;
+  transition-property: all;
+}
+
+.card img {
+  width: 100%;
+  height: 250px;
+}
+
+.card-texts {
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card-title {
+  font-size: 24px;
+  font-family: bold-italic;
+}
+
+.card-author {
+  font-size: 16px;
+  color: #222;
+  font-family: italic;
+}
+
+.card-description {
+  font-size: 20px;
+  color: #333;
+  font-family: light-italic;
+}
